@@ -29,6 +29,8 @@ class ShoppingCart
   end
 
   def items
-    @items_by_code.values
+    @items_by_code.values.each do |item|
+      puts "%{quantity} x %{name}" % item.attributes
+    end
   end
 end

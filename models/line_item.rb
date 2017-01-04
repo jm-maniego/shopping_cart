@@ -10,4 +10,15 @@ class LineItem
   def price
     @quantity * @product.price
   end
+
+  def name
+    @product.name
+  end
+
+  def attributes
+    {
+      quantity: @quantity,
+      name:     name
+    }
+  end
 end
