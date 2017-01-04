@@ -16,6 +16,7 @@ class ShoppingCart
     product_code = item.code
     if (line_item = @items_by_code[product_code])
       line_item.quantity += 1
+      line_item.price = @promo.apply(line_item)
     else
       @items_by_code[product_code] = LineItem.new(item)
     end
@@ -23,7 +24,7 @@ class ShoppingCart
 
   def total
     @items_by_code.inject(0) do |sum, (_product_code, item)|
-      sum + @promo.apply(item)
+      sum + item.price
     end.to_f
   end
 

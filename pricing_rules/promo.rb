@@ -7,7 +7,7 @@ class Promo
     result = @rules.inject(0) do |sum, rule|
       sum += rule.apply(line_item)
     end
-    return line_item.price if result.zero?
+    return line_item.original_price if result.zero?
     result
   end
 end
