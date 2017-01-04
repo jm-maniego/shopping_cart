@@ -21,6 +21,9 @@ class ShoppingCartTest < Test::Unit::TestCase
     3.times { cart.add(@item1) }
     cart.add(@item3)
 
+    puts
+    cart.items
+
     assert_equal 94.70, cart.total
   end
 
@@ -28,6 +31,9 @@ class ShoppingCartTest < Test::Unit::TestCase
     cart = ShoppingCart.new(@pricing_rules)
     2.times { cart.add(@item1) }
     4.times { cart.add(@item3) }
+
+    puts
+    cart.items
 
     assert_equal 209.40, cart.total
   end
@@ -37,6 +43,9 @@ class ShoppingCartTest < Test::Unit::TestCase
     cart.add(@item1)
     2.times { cart.add(@item2) }
 
+    puts
+    cart.items
+
     assert_equal 84.70, cart.total
   end
 
@@ -44,6 +53,9 @@ class ShoppingCartTest < Test::Unit::TestCase
     cart = ShoppingCart.new(@pricing_rules)
     cart.add(@item1)
     cart.add(@item4, 'I<3AMAYSIM')
+
+    puts
+    cart.items
 
     assert_equal 31.32, cart.total
   end

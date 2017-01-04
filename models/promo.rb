@@ -12,7 +12,6 @@ class Promo
       line_item.price = rule.apply(line_item)
       line_item.price
     end
-    return line_item.original_price if result.zero?
     result
   end
 end

@@ -2,9 +2,11 @@ class LineItem
   attr_reader :product
   attr_accessor :quantity, :price, :free
 
-  def initialize(product)
+  def initialize(product, attributes={})
     @product = product
-    @quantity = 1
+    @quantity = attributes.fetch(:quantity, 0)
+    @free = attributes.fetch(:free, false)
+    @price = 0 if @free
   end
 
   def price
