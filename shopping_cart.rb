@@ -1,13 +1,12 @@
 require './models/line_item'
 require './models/product'
-require './lib/promo_code/promo_code'
+require './models/promo_code'
+require './models/promo'
+require './models/pricing_rule'
 require './lib/promo_code/promo_code_validator'
-require './lib/pricing_rules/promo'
-require './lib/pricing_rules/pricing_rule'
 require './lib/pricing_rules/n_for_n_pricing_rule'
 require './lib/pricing_rules/bulk_discount_pricing_rule'
 require 'bigdecimal'
-require 'pp'
 
 class ShoppingCart
   def initialize(pricing_rules)
