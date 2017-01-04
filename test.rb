@@ -21,7 +21,7 @@ class ShoppingCartTest < Test::Unit::TestCase
     3.times { cart.add(@item1) }
     cart.add(@item3)
 
-    assert_equal 94.7, cart.total
+    assert_equal 94.70, cart.total
   end
 
   test 'scenario 2' do
@@ -29,7 +29,7 @@ class ShoppingCartTest < Test::Unit::TestCase
     2.times { cart.add(@item1) }
     4.times { cart.add(@item3) }
 
-    assert_equal 209.4, cart.total
+    assert_equal 209.40, cart.total
   end
 
   test 'scenario 3' do
@@ -37,6 +37,6 @@ class ShoppingCartTest < Test::Unit::TestCase
     cart.add(@item1)
     2.times { cart.add(@item2) }
 
-    assert_equal 84.7, cart.total
+    assert_equal 84.70, cart.total
   end
 end

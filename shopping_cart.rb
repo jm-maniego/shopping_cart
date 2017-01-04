@@ -5,7 +5,6 @@ require './pricing_rules/pricing_rule'
 require './pricing_rules/n_for_n_pricing_rule'
 require './pricing_rules/bulk_discount_pricing_rule'
 require 'bigdecimal'
-require 'pp'
 
 class ShoppingCart
   def initialize(pricing_rules)
