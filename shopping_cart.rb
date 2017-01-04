@@ -3,6 +3,7 @@ require './models/product'
 require './models/promo_code'
 require './models/promo'
 require './models/pricing_rule'
+require './models/bundle_promo'
 require './lib/promo_code/promo_code_validator'
 require './lib/pricing_rules/n_for_n_pricing_rule'
 require './lib/pricing_rules/bulk_discount_pricing_rule'
@@ -49,21 +50,4 @@ class ShoppingCart
     def find_or_new_line_item(product)
       @items_by_code[product.code] ||= LineItem.new(product)
     end
-end
-
-class BundlePromo
-  def initialize
-    @every_product_add_code_pair = {}
-  end
-
-  def add(every_product_code, add_product_code)
-    @every_product_add_code_pair[every_product_code] = add_product_code
-  end
-
-  def apply(every_product_code)
-    if (add_product_code = @every_product_add_code_pair[every_product_code])
-      new_product = ProductCollection.get(add_product_code)
-      yield LineItem.new(new_product, {quantity: 1, free: true})
-    end
-  end
 end
