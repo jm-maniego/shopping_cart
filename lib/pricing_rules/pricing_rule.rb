@@ -4,9 +4,8 @@ class PricingRule
       if validate(line_item)
         return calculate(line_item)
       end
-      return line_item.price
     end
-    0
+    line_item.price
   end
 
   def validate(line_item)

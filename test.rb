@@ -39,4 +39,12 @@ class ShoppingCartTest < Test::Unit::TestCase
 
     assert_equal 84.70, cart.total
   end
+
+  test 'scenario 4' do
+    cart = ShoppingCart.new(@pricing_rules)
+    cart.add(@item1)
+    cart.add(@item4, 'I<3AMAYSIM')
+
+    assert_equal 31.32, cart.total
+  end
 end
