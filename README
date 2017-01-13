@@ -1,1 +1,4 @@
+Ruby Version: 2.3.1
+test-unit gem version: 3.1.5
+
 ruby test.rb -v
